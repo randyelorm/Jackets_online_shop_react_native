@@ -2,11 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator} from "@react-navigation/stack"
 import Shoppage from '../Components/ShopPage';
-import FirstDetailsPage from '../Components/ShopDetails/FirstDetailsPage';
+
 import { NavigationContainer, DefaultTheme   } from '@react-navigation/native';
-import SecondDetailsPage from '../Components/ShopDetails/SeconDetailsPage';
-import ThirdDetailsPage from '../Components/ShopDetails/ThirdDetailsPage';
-import FourthDetailsPage from '../Components/ShopDetails/FourthDetailsPage';
+import DetailsPage from "../Components/ShopDetails/DetailsPage"
 
 const Stack = createStackNavigator()
 
@@ -39,21 +37,10 @@ const RootNavigator = ({navigation}) => {
             />
 
               <Stack.Screen 
-            name = "First Details Page"
-             component = {FirstDetailsPage} />
+            name = "Details Page"
+             component = {DetailsPage} />
 
-             <Stack.Screen 
-            name = "Second Details Page"
-             component = {SecondDetailsPage} />
-
-
-            <Stack.Screen 
-            name = "Third Details Page"
-             component = {ThirdDetailsPage} />
-
-            <Stack.Screen 
-            name = "Fourth Details Page"
-             component = {FourthDetailsPage} />
+        
 
  
           

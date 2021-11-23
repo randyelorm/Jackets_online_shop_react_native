@@ -20,7 +20,7 @@ const ShoppingItems = [
         title: "Cotton Biker Jacket",
         price: "$99",
         defaultRating: 4,
-        screen: "First Details Page"
+   
 
      
     },
@@ -31,7 +31,7 @@ const ShoppingItems = [
         title: "Pink Leather Jacket",
         price: "$80",
         defaultRating: 3,
-        screen: "Second Details Page"
+  
     },
 
     {
@@ -40,7 +40,7 @@ const ShoppingItems = [
         title: "Classic Green Hoodie",
         price: "$140",
         defaultRating: 5,
-        screen: "Third Details Page"
+
     },
 
     {
@@ -49,7 +49,7 @@ const ShoppingItems = [
         title: "Red Velvet Jacket",
         price: "$115",
         defaultRating: 4,
-        screen: "Fourth Details Page"
+ 
     },
 
 
@@ -95,7 +95,7 @@ const goToDetails=()=> {
                         ({item})=> {
                             return(
                           
-                                <TouchableOpacity key = {item.id} style = {styles.FlatListView} onPress = {()=>(navigation.navigate(item.screen))} >
+                                <TouchableOpacity key = {item.id} style = {styles.FlatListView} onPress = {()=>(navigation.navigate("Details Page", {details: item}))} >
                                       
                                   <View style = {styles.JacketImagesView}>
                                       <Image style = {styles.JacketImages} source = {item.mysource}/>

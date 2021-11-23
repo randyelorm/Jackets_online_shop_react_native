@@ -9,7 +9,10 @@ import StarIcon from "react-native-vector-icons/FontAwesome"
 import { Rating, AirbnbRating } from 'react-native-ratings';
 
 
-const ThirdDetailsPage = () => {
+const DetailsPage = (props) => {
+
+
+ const {mysource, title, price, defaultRating} = props.route.params.details
 
 const navigation = useNavigation()
  
@@ -28,20 +31,20 @@ const goBack=()=> {
                 </View>
 
                 <View style = {styles.ImageView}>
-                  <Image source={require("../../assets/3.png")} style = {styles.Image}/>
+                  <Image source={mysource} style = {styles.Image}/>
                 <View style = {styles.LoveIconView} ><LoveIcon name = "heart" style = {styles.LoveIcon} /></View>  
                 </View>
 
 
                 <View style = {styles.DetailsView}>
 
-                  <Text style= {styles.ProductNameText}>Classic Green Hoodie</Text>
+                  <Text style= {styles.ProductNameText}>{title}</Text>
                   
                   <View style = {styles.StarsView}>
                     <Text>Review:</Text>
                     <AirbnbRating
                         count={5}
-                        defaultRating={5}
+                        defaultRating={defaultRating}
                         size={10}
                         showRating={false}
                         isDisabled = {true}
@@ -70,8 +73,8 @@ const goBack=()=> {
                  <View style = {styles.SizesView}>
                   <View><Text style = {styles.sizes}>XS</Text></View>  
                   <View><Text style = {styles.sizes}>S</Text></View>  
-                  <View><Text style = {styles.sizes}>M</Text></View>  
-                  <View><Text style = {styles.sizesCurrent}>L</Text></View>  
+                  <View><Text style = {styles.sizesCurrent}>M</Text></View>  
+                  <View><Text style = {styles.sizes}>L</Text></View>  
                   <View><Text style = {styles.sizes}>XL</Text></View>  
                  
                 </View>
@@ -85,7 +88,7 @@ const goBack=()=> {
                 <View style = {styles.PriceCartView}>
                   <View>
                       <Text style= {styles.totalAmt}>Total Amount</Text>
-                      <Text style={styles.totalPrice}>$140</Text>
+                      <Text style={styles.totalPrice}>{price}</Text>
                   </View>
 
                   <TouchableOpacity style ={styles.AddToCartTouchable}>
@@ -96,7 +99,7 @@ const goBack=()=> {
     );
 }
 
-export default ThirdDetailsPage;
+export default DetailsPage;
 
 const styles = StyleSheet.create({
   container: {
